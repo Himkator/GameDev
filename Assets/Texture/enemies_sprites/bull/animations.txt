@@ -1,0 +1,6 @@
+bull frame size 48x32
+idle: 2 frames, 3 fps, loop, row 0
+windup: 4 frames, 7 fps, play once, row 1
+dash: 4 frames, 14 fps, loop, row 2
+stun: 4 frames, 6 fps, loop, row 3
+walk: 4 frames, 6 fps, loop, row 4

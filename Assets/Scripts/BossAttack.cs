@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public Animator bossAnimator;
     public float distance = 0.7f;
 
     void Start()
@@ -26,6 +27,7 @@ public class BossAttack : MonoBehaviour
 
         for (int i = 0; i < bulletCount; i++)
         {
+            bossAnimator.SetTrigger("Fire");
             float y = (i - (bulletCount - 1) / 2f) * distance;
 
             Vector3 position = transform.position

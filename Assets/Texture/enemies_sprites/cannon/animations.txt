@@ -1,0 +1,7 @@
+cannon frame size 48x32
+idle: 2 frames, 3 fps, loop, row 0
+aim: 3 frames, 6 fps, loop, row 1
+fire: 4 frames, 14 fps, play once, row 2
+cooldown: 2 frames, 4 fps, loop, row 3
+projectile: 1 frames, 1 fps, loop, row 4
+impact: 3 frames, 12 fps, play once, row 5
