@@ -1,0 +1,5 @@
+slime frame size 32x32
+patrol: 4 frames, 8 fps, loop, row 0
+windup: 3 frames, 6 fps, play once, row 1
+strike: 3 frames, 12 fps, play once, row 2
+die: 4 frames, 10 fps, play once, row 3
