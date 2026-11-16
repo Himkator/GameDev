@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 508.9624, y: -189.5453}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 450, y: -189.5453}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45313620
 MonoBehaviour:
@@ -510,7 +510,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000061035156, y: -0.17881775}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54615927
 MonoBehaviour:
@@ -768,7 +768,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 640.0001, y: -189.54532}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92785174
 MonoBehaviour:
@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1645e86fd70098c42beda9d7ec17102c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slimeStats: {fileID: 11400000, guid: b96fce4131855b042a1e044044027bbe, type: 2}
   player: {fileID: 1521486423}
   eye: {fileID: 1624718117}
   anim: {fileID: 383648931}
@@ -2007,22 +2008,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  viewRange: 4.5
-  fov: 90
-  sightInterval: 0.1
-  patrolSpeed: 1.4
-  chaseSpeed: 2
-  leashExtra: 1.5
-  loseTime: 2
-  attackRange: 1
-  attackHeight: 1
-  windup: 0.5
-  recovery: 0.4
-  cooldown: 1
-  hitReach: 1
-  hitRadius: 1
-  damage: 1
-  health: 1
 --- !u!95 &383648931
 Animator:
   serializedVersion: 7
@@ -2963,7 +2948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &690061483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4187,7 +4172,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -669.3777, y: -149.44157}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441973657
 MonoBehaviour:
@@ -4412,12 +4397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023085f1ed86fd84e8330ef1f7198fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 12
+  playerStats: {fileID: 0}
+  bossStats: {fileID: 0}
   coinText: {fileID: 1795493882}
   winPanel: {fileID: 2070826344}
   audioClip: {fileID: 8300000, guid: 9bb1e87beb32f6d4ea7556aedd089a80, type: 3}
-  health: 3
   animator: {fileID: 1521486431}
   portalAnimator: {fileID: 690061485}
   portal: {fileID: 690061481}
@@ -4551,7 +4535,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7f14137c86db090408fca5071a6ab02d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4697,8 +4681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d18e5b427eb2a4c85b271e02f30f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  playerStats: {fileID: 0}
   hearts:
   - {fileID: 1836231817}
   - {fileID: 996711958}

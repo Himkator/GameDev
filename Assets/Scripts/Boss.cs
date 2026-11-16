@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int maxHp = 20;
-    public int hp;
+    public BossStats bossStats;
+    public PlayerStats playerStats;
     public BossHealthBar bar;
     public Animator portalAnimator;
     public Animator animator;
     public GameObject portal;
+    private int maxHp;
+    private int hp;
 
     void Start()
     {
+        maxHp = bossStats.maxHp;
         hp = maxHp;
         bar.SetValue(1f);
         Debug.Log("Boss HP: " + hp);
@@ -20,7 +23,7 @@ public class Boss : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            TakeDamage(2);
+            TakeDamage(playerStats.gunDamage);
             Destroy(other.gameObject);
         }
     }

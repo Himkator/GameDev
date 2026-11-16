@@ -3,25 +3,26 @@ public class BullCharger : MonoBehaviour
 {
     enum State { Idle, Windup, Dash, Stunned, Return }
 
+    public BullStats bullStats;
     [SerializeField] GameObject player;
     [SerializeField] GameObject eye; 
     [SerializeField] Animator anim;
     [SerializeField] LayerMask obstacleMask;
     [SerializeField] LayerMask playerMask;
 
-    [SerializeField] float viewRange = 5f;
-    [SerializeField] float fov = 90f;
-    [SerializeField] float sightInterval = 0.1f;
+    private float viewRange = 5f;
+    private float fov = 90f;
+    private float sightInterval = 0.1f;
 
-    [SerializeField] float windup = 0.7f; 
-    [SerializeField] float dashSpeed = 7.5f;
-    [SerializeField] float maxDashDistance = 7f;
-    [SerializeField] float wallCheck = 0.9f; 
-    [SerializeField] float stun = 1f;
-    [SerializeField] float hitRadius = 0.8f;
-    [SerializeField] int damage = 1;
+    private float windup = 0.7f; 
+    private float dashSpeed = 7.5f;
+    private float maxDashDistance = 7f;
+    private float wallCheck = 0.9f; 
+    private float stun = 1f;
+    private float hitRadius = 0.8f;
+    private int damage = 1;
 
-    [SerializeField] float returnSpeed = 1.6f;
+    private float returnSpeed = 1.6f;
 
     State state;
     float timer;
@@ -41,6 +42,18 @@ public class BullCharger : MonoBehaviour
         if (!player) player = GameObject.FindGameObjectWithTag("Player");
         facing = transform.localScale.x < 0 ? -1 : 1;
         homeX = transform.position.x;
+
+        viewRange = bullStats.viewRange;
+        fov = bullStats.fov;
+        sightInterval = bullStats.sightInterval;
+        windup = bullStats.windup;
+        dashSpeed = bullStats.dashSpeed;
+        maxDashDistance = bullStats.maxDashDistance;
+        wallCheck = bullStats.wallCheck;   
+        stun = bullStats.stun;
+        hitRadius = bullStats.hitRadius;
+        damage = bullStats.damage;
+        returnSpeed = bullStats.returnSpeed;
     }
 
     void Start() => SetState(State.Idle);

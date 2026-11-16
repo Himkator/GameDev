@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 508.9624, y: -189.5453}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 450, y: -189.5453}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45313620
 MonoBehaviour:
@@ -510,7 +510,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000061035156, y: -0.17881775}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54615927
 MonoBehaviour:
@@ -768,7 +768,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 640.0001, y: -189.54532}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92785174
 MonoBehaviour:
@@ -2519,9 +2519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Be careful with enemies
-
-'
+  m_text: BULLLLL!!!!!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3843,7 +3841,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -669.3777, y: -149.44157}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441973657
 MonoBehaviour:
@@ -4068,12 +4066,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023085f1ed86fd84e8330ef1f7198fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 12
+  playerStats: {fileID: 0}
+  bossStats: {fileID: 0}
   coinText: {fileID: 1795493882}
   winPanel: {fileID: 2070826344}
   audioClip: {fileID: 8300000, guid: 9bb1e87beb32f6d4ea7556aedd089a80, type: 3}
-  health: 3
   animator: {fileID: 1521486431}
   portalAnimator: {fileID: 690061485}
   portal: {fileID: 690061481}
@@ -4207,7 +4204,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7f14137c86db090408fca5071a6ab02d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4353,8 +4350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d18e5b427eb2a4c85b271e02f30f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  playerStats: {fileID: 0}
   hearts:
   - {fileID: 1836231817}
   - {fileID: 996711958}
@@ -5146,6 +5142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcfb93817b0a4b845b908b1ebb761c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullStats: {fileID: 11400000, guid: 9b2f70c216c5fd341b11ff4342d7faf2, type: 2}
   player: {fileID: 1521486423}
   eye: {fileID: 1170414545}
   anim: {fileID: 1747552977}
@@ -5155,17 +5152,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 128
-  viewRange: 5
-  fov: 90
-  sightInterval: 0.1
-  windup: 0.7
-  dashSpeed: 7.5
-  maxDashDistance: 7
-  wallCheck: 0.9
-  stun: 1
-  hitRadius: 0.8
-  damage: 1
-  returnSpeed: 1.6
 --- !u!95 &1747552977
 Animator:
   serializedVersion: 7
@@ -5721,7 +5707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 3
+  m_text: Level 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 508.9624, y: -189.5453}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 450, y: -189.5453}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45313620
 MonoBehaviour:
@@ -510,7 +510,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000061035156, y: -0.17881775}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54615927
 MonoBehaviour:
@@ -621,7 +621,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 640.0001, y: -189.54532}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92785174
 MonoBehaviour:
@@ -821,7 +821,7 @@ Transform:
   m_GameObject: {fileID: 112131145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 508.68, y: 187.7, z: 0}
+  m_LocalPosition: {x: 508.68, y: 187.7, z: -20}
   m_LocalScale: {x: 1, y: 7.4801, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3663,7 +3663,7 @@ Transform:
   m_GameObject: {fileID: 957248994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 489.59, y: 187.76, z: 0}
+  m_LocalPosition: {x: 489.59, y: 187.76, z: -20}
   m_LocalScale: {x: 1, y: 7.4801, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4386,9 +4386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ce1c6db8ff1554ca68b8eada9a69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossStats: {fileID: 0}
   bulletPrefab: {fileID: 1419831731487488954, guid: 2fac44604239abf42aba9ce079850cc7, type: 3}
   bossAnimator: {fileID: 1370835028}
-  distance: 0.7
 --- !u!114 &1370835025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4401,8 +4401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3803428e92cd1e2408f7fe0b7da20fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 20
-  hp: 0
+  bossStats: {fileID: 11400000, guid: 606e11a8db5e8b846a2e06d1eaa20937, type: 2}
+  playerStats: {fileID: 11400000, guid: b14eacc401cafc7419edc48a1fa12909, type: 2}
   bar: {fileID: 632402694}
   portalAnimator: {fileID: 690061485}
   animator: {fileID: 1370835028}
@@ -4912,7 +4912,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -669.3777, y: -149.44157}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441973657
 MonoBehaviour:
@@ -4990,12 +4990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023085f1ed86fd84e8330ef1f7198fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 12
+  playerStats: {fileID: 11400000, guid: b14eacc401cafc7419edc48a1fa12909, type: 2}
+  bossStats: {fileID: 11400000, guid: 606e11a8db5e8b846a2e06d1eaa20937, type: 2}
   coinText: {fileID: 0}
   winPanel: {fileID: 2070826344}
   audioClip: {fileID: 8300000, guid: 9bb1e87beb32f6d4ea7556aedd089a80, type: 3}
-  health: 3
   animator: {fileID: 1521486431}
   portalAnimator: {fileID: 690061485}
   portal: {fileID: 690061481}
@@ -5129,7 +5128,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7f14137c86db090408fca5071a6ab02d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5275,8 +5274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d18e5b427eb2a4c85b271e02f30f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  playerStats: {fileID: 0}
   hearts:
   - {fileID: 1836231817}
   - {fileID: 996711958}
@@ -6722,7 +6720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 3
+  m_text: Level 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

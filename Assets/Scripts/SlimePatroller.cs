@@ -4,6 +4,7 @@ public class SlimePatroller : MonoBehaviour
 {
     enum State { Patrol, Chase, Windup, Strike }
 
+    public SlimeStats slimeStats;
     [SerializeField] GameObject player;
     [SerializeField] GameObject eye;
     [SerializeField] Animator anim;
@@ -11,24 +12,24 @@ public class SlimePatroller : MonoBehaviour
     [SerializeField] LayerMask obstacleMask;
     [SerializeField] LayerMask playerMask;
 
-    [SerializeField] float viewRange = 4.5f;
-    [SerializeField] float fov = 90f;
-    [SerializeField] float sightInterval = 0.1f;
+    private float viewRange = 4.5f;
+    private float fov = 90f;
+    private float sightInterval = 0.1f;
 
-    [SerializeField] float patrolSpeed = 1.4f; 
-    [SerializeField] float chaseSpeed = 2.0f; 
-    [SerializeField] float leashExtra = 1.5f; 
-    [SerializeField] float loseTime = 2f;
+    private float patrolSpeed = 1.4f; 
+    private float chaseSpeed = 2.0f; 
+    private float leashExtra = 1.5f; 
+    private float loseTime = 2f;
 
-    [SerializeField] float attackRange = 0.9f;
-    [SerializeField] float attackHeight = 0.8f;
-    [SerializeField] float windup = 0.5f; 
-    [SerializeField] float recovery = 0.4f;
-    [SerializeField] float cooldown = 1.0f;
-    [SerializeField] float hitReach = 0.7f;
-    [SerializeField] float hitRadius = 0.6f;
-    [SerializeField] int damage = 1;
-    [SerializeField] int health = 1;
+    private float attackRange = 0.9f;
+    private float attackHeight = 0.8f;
+    private float windup = 0.5f; 
+    private float recovery = 0.4f;
+    private float cooldown = 1.0f;
+    private float hitReach = 0.7f;
+    private float hitRadius = 0.6f;
+    private int damage = 1;
+    private int health = 1;
 
     State state;
     float timer; 
@@ -51,6 +52,23 @@ public class SlimePatroller : MonoBehaviour
         minX = maxX = transform.position.x;
         foreach (var w in waypoints) { minX = Mathf.Min(minX, w.position.x); maxX = Mathf.Max(maxX, w.position.x); }
         minX -= leashExtra; maxX += leashExtra;
+
+        viewRange = slimeStats.viewRange;
+        fov = slimeStats.fov;
+        sightInterval = slimeStats.sightInterval;
+        patrolSpeed = slimeStats.patrolSpeed;
+        chaseSpeed = slimeStats.chaseSpeed;
+        leashExtra = slimeStats.leashExtra;
+        loseTime = slimeStats.loseTime;
+        attackRange = slimeStats.attackRange;
+        attackHeight = slimeStats.attackHeight;
+        windup = slimeStats.windup;
+        recovery = slimeStats.recovery;
+        cooldown = slimeStats.cooldown;
+        hitReach = slimeStats.hitReach;
+        hitRadius = slimeStats.hitRadius;
+        damage = slimeStats.damage;
+        health = slimeStats.health;
     }
 
     void Start() => SetState(State.Patrol);

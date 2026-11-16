@@ -4,6 +4,7 @@ public class CannonShooter : MonoBehaviour
 {
     enum State { Idle, Aim, Fire, Cooldown }
 
+    public CanonStats canonStats;
     [SerializeField] GameObject player; 
     [SerializeField] GameObject muzzle; 
     [SerializeField] Animator anim;
@@ -11,17 +12,17 @@ public class CannonShooter : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] LayerMask obstacleMask; 
 
-    [SerializeField] float viewRange = 7f;
-    [SerializeField] float fov = 90f;
-    [SerializeField] float sightInterval = 0.1f;
+    private float viewRange;
+    private float fov;
+    private float sightInterval;
     
 
-    [SerializeField] float aimTime = 0.6f; 
-    [SerializeField] float fireTime = 0.15f; 
-    [SerializeField] float cooldown = 1.5f;
-    [SerializeField] float shotSpeed = 3.75f;
-    [SerializeField] int damage = 1;
-    [SerializeField] float warningWidth = 0.1f;
+    private float aimTime; 
+    private float fireTime; 
+    private float cooldown;
+    private float shotSpeed;
+    private int damage;
+    private float warningWidth;
 
     State state;
     float timer;
@@ -39,6 +40,16 @@ public class CannonShooter : MonoBehaviour
             laser.SetActive(false);
             warningSpriteSize = laser.GetComponent<SpriteRenderer>().sprite.bounds.size;
         }
+
+        viewRange = canonStats.viewRange;
+        fov = canonStats.fov;
+        sightInterval = canonStats.sightInterval;
+        aimTime = canonStats.aimTime;
+        fireTime = canonStats.fireTime;
+        cooldown = canonStats.cooldown;
+        shotSpeed = canonStats.shotSpeed;
+        damage = canonStats.damage;
+        warningWidth = canonStats.warningWidth;
     }
 
     void Start() => SetState(State.Idle);

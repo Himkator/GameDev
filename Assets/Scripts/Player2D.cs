@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class Player2D : MonoBehaviour
 {
-    public float speed = 7f;
-    public float jumpForce = 12f;
+    public PlayerStats playerStats;
+    public BossStats bossStats;
     public TextMeshProUGUI coinText;
     public GameObject winPanel;
     public AudioClip audioClip;
-    public int health = 3;
     public Animator animator;
     public Animator portalAnimator;
     public GameObject portal;
@@ -23,6 +22,9 @@ public class Player2D : MonoBehaviour
     private int coinsTotal;
     private AudioSource audioSource;
     private SpriteRenderer sr;
+    private float speed;
+    private float jumpForce;
+
 
 
     private Rigidbody2D rb;
@@ -35,6 +37,8 @@ public class Player2D : MonoBehaviour
             coinText.text = "Coins: " + coins + " / " + coinsTotal;
         }
         audioSource = GetComponent<AudioSource>();
+        speed = playerStats.speed;
+        jumpForce = playerStats.jumpForce;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -61,7 +65,7 @@ public class Player2D : MonoBehaviour
 
         if (other.CompareTag("Fire"))
         {
-            gameObject.GetComponent<Health>().TakeDamage(1);
+            gameObject.GetComponent<Health>().TakeDamage(playerStats.fireDamage);
         }
 
         if (other.CompareTag("Exit"))
@@ -77,7 +81,7 @@ public class Player2D : MonoBehaviour
 
         if (other.CompareTag("BossBullet"))
         {
-            gameObject.GetComponent<Health>().TakeDamage(1);
+            gameObject.GetComponent<Health>().TakeDamage(bossStats.damage);
         }
     }
 

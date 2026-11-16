@@ -2,27 +2,30 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
+    public BossStats bossStats;
     public GameObject bulletPrefab;
     public Animator bossAnimator;
-    public float distance = 0.7f;
+    private float distance;
+
 
     void Start()
     {
-        InvokeRepeating(nameof(Shoot), 1f, 3f);
+        distance = bossStats.distance;
+        InvokeRepeating(nameof(Shoot), 1f, bossStats.shootInterval);
     }
 
     void Shoot()
     {
         int bulletCount;
-        int hp = GetComponent<Boss>().hp;
+        int hp = bossStats.maxHp;
 
-        if (hp > 10)
+        if (hp > bossStats.minHp)
         {
-            bulletCount = 3;
+            bulletCount = bossStats.minBulletCount;
         }
         else
         {
-            bulletCount = 5;
+            bulletCount = bossStats.maxBulletCount;
         }
 
         for (int i = 0; i < bulletCount; i++)
