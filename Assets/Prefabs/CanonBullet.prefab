@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c72ce4faa6f6f4985c7b72d526046c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  canonStats: {fileID: 11400000, guid: d8a7bbc05bee0ff478b51014dc4b437c, type: 2}
   impactEffect: {fileID: 0}
 --- !u!61 &-3080391376637966113
 BoxCollider2D:

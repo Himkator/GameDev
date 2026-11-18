@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
     public Animator portalAnimator;
     public Animator animator;
     public GameObject portal;
+    public int CurrentHp { get { return hp; } }
     private int maxHp;
     private int hp;
 
@@ -40,7 +41,7 @@ public class Boss : MonoBehaviour
     {
         portal.SetActive(true);
         animator.SetBool("isDead", true);
-        portalAnimator.SetBool("bossDead", true);
+        portalAnimator.SetTrigger("OpenPortal");
         bar.gameObject.SetActive(false);
         Destroy(gameObject, 0.6f);
     }

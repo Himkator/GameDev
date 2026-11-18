@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_05
+  m_EditorClassIdentifier: 
+  levelNumber: 5
+  levelName: Level 05
+  levelDescription: Is he chasing us???
+  levelType: 0
+  layoutPrefab: {fileID: 7331805610085298361, guid: afc1c2ca22b5da94ab973120bf3a38a7, type: 3}
+  playerSpawnPosition: {x: 491.22, y: 185.3554, z: 0}
+  portalPosition: {x: 506.07, y: 185.73, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 5281874041592519977, guid: d3bef4d7e5623274c888878ea6d1691c, type: 3}
+  coinPositions:
+  - {x: 496.21, y: 185.52, z: 0}
+  - {x: 493.63, y: 187.56, z: 0}
+  - {x: 498.19, y: 188.65, z: 0}
+  - {x: 501.34, y: 189.23, z: 0}
+  - {x: 503.14, y: 188.05, z: 0}
+  - {x: 504.95, y: 185.61, z: 0}
+  coinsRequired: 6
+  enemies: []
+  boss:
+    enemyPrefab: {fileID: 0}
+    spawnPosition: {x: 0, y: 0, z: 0}

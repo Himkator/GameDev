@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlimeStats
   m_EditorClassIdentifier: 
   viewRange: 4.5
-  fov: 90
+  fov: 360
   sightInterval: 0.1
   patrolSpeed: 1.4
   chaseSpeed: 2

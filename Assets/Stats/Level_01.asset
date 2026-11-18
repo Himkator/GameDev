@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_01
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  levelName: Level 01
+  levelDescription: Collect all coin to win
+  levelType: 0
+  layoutPrefab: {fileID: 2173364049998597988, guid: b25a91415678ef741b23a55ea4d975a5, type: 3}
+  playerSpawnPosition: {x: 494.3554, y: 185.3554, z: 0}
+  portalPosition: {x: 506.18, y: 185.87, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 5281874041592519977, guid: d3bef4d7e5623274c888878ea6d1691c, type: 3}
+  coinPositions:
+  - {x: 495.974, y: 185.45, z: 0}
+  - {x: 490.86, y: 187.56, z: 0}
+  - {x: 499.58, y: 187.56, z: 0}
+  - {x: 500.72, y: 187.56, z: 0}
+  - {x: 502.12, y: 185.58, z: 0}
+  - {x: 504.77, y: 185.65, z: 0}
+  coinsRequired: 6
+  enemies: []
+  boss:
+    enemyPrefab: {fileID: 0}
+    spawnPosition: {x: 0, y: 0, z: 0}

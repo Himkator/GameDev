@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_02
+  m_EditorClassIdentifier: 
+  levelNumber: 2
+  levelName: Level 02
+  levelDescription: Press X to shot
+  levelType: 0
+  layoutPrefab: {fileID: 6624603498306164406, guid: 87c199b51aeccdc45baccb789804a343, type: 3}
+  playerSpawnPosition: {x: 494.23, y: 185.36, z: 0}
+  portalPosition: {x: 506.54, y: 189.6, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 5281874041592519977, guid: d3bef4d7e5623274c888878ea6d1691c, type: 3}
+  coinPositions:
+  - {x: 495.974, y: 185.45, z: 0}
+  - {x: 494.14, y: 187.42, z: 0}
+  - {x: 498.98, y: 189.69, z: 0}
+  - {x: 500.67, y: 188.32, z: 0}
+  - {x: 498.91, y: 187.35, z: 0}
+  - {x: 491.02, y: 187.42, z: 0}
+  - {x: 505.62, y: 185.476, z: 0}
+  - {x: 504.27, y: 187.38, z: 0}
+  coinsRequired: 8
+  enemies:
+  - enemyPrefab: {fileID: 3721332952287922463, guid: 095c0a37433e11444a900ccbb283d5ea, type: 3}
+    spawnPosition: {x: 492.4164, y: 187.2632, z: 0}
+  boss:
+    enemyPrefab: {fileID: 0}
+    spawnPosition: {x: 0, y: 0, z: 0}

@@ -3,8 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 7f;
-    public float jumpForce = 12f;
+    public PlayerStats playerStats;
+    private float speed;
+    private float jumpForce;
 
     Rigidbody2D rb; Animator animator; SpriteRenderer sr;
     Vector2 move;
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        speed = playerStats.speed;
+        jumpForce = playerStats.jumpForce;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();

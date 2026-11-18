@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_07
+  m_EditorClassIdentifier: 
+  levelNumber: 7
+  levelName: Level 07
+  levelDescription: Fight with Boss
+  levelType: 2
+  layoutPrefab: {fileID: 1363514462119283122, guid: c4244ffe61bc292438e3d36259105f89, type: 3}
+  playerSpawnPosition: {x: 494.3554, y: 185.3554, z: 0}
+  portalPosition: {x: 506.18, y: 185.87, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 0}
+  coinPositions: []
+  coinsRequired: 0
+  enemies: []
+  boss:
+    enemyPrefab: {fileID: 7472696615608863208, guid: 46178eaff9a4abe4393c91d074d2a516, type: 3}
+    spawnPosition: {x: 503.834, y: 186.11, z: 0}

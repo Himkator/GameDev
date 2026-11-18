@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Hazard[] prefabs;
-    public float spawnInterval = 0.5f;
+    public float spawnInterval = 0.9f;
     public float warningTime = 1f;
     public float lineWidth = 0.3f;
 

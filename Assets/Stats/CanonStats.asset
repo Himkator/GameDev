@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: CanonStats
   m_EditorClassIdentifier: 
   lifetime: 5
-  viewRange: 7
-  fov: 90
+  viewRange: 20
+  fov: 20
   sightInterval: 0.1
-  aimTime: 0.6
-  fireTime: 0.15
-  cooldown: 1.5
-  shotSpeed: 3.75
+  aimTime: 1
+  fireTime: 1
+  cooldown: 4
+  shotSpeed: 3
   damage: 1
   warningWidth: 0.1

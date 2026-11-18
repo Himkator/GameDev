@@ -9,4 +9,6 @@ public class PlayerStats : ScriptableObject
     public int maxHp = 3;
     public int fireDamage = 1;
     public int gunDamage = 1;
+    public float cooldown = 0.3f;
+    public float fallPoint = 180f;
 }

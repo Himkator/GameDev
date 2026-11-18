@@ -17,7 +17,7 @@ public class BossAttack : MonoBehaviour
     void Shoot()
     {
         int bulletCount;
-        int hp = bossStats.maxHp;
+        int hp = GetComponent<Boss>().CurrentHp;
 
         if (hp > bossStats.minHp)
         {

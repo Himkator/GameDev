@@ -15,7 +15,6 @@ public class Player2D : MonoBehaviour
     public Animator portalAnimator;
     public GameObject portal;
     public GameObject settingsPanel;
-    public bool AllCoinCollected = false;
 
     private bool onGround;
     private int coins;
@@ -24,6 +23,9 @@ public class Player2D : MonoBehaviour
     private SpriteRenderer sr;
     private float speed;
     private float jumpForce;
+    private bool coinsConfigured;
+    private StarTimer starTimer;
+    private bool levelSaved;
 
 
 
@@ -31,14 +33,19 @@ public class Player2D : MonoBehaviour
 
     void Start()
     {
-        if (coinText != null)
+        if (!coinsConfigured)
         {
             coinsTotal = GameObject.FindGameObjectsWithTag("Coin").Length;
+        }
+
+        if (coinText != null)
+        {
             coinText.text = "Coins: " + coins + " / " + coinsTotal;
         }
         audioSource = GetComponent<AudioSource>();
         speed = playerStats.speed;
         jumpForce = playerStats.jumpForce;
+        starTimer = GetComponent<StarTimer>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -57,9 +64,8 @@ public class Player2D : MonoBehaviour
             Debug.Log("Coins: " + coins + " / " + coinsTotal);
 
             if (coins >= coinsTotal){
-                AllCoinCollected = true;
+                portalAnimator.SetTrigger("OpenPortal");
                 portal.SetActive(true);
-                portalAnimator.SetBool("AllCoinCollected", true);
             }
         }
 
@@ -70,9 +76,21 @@ public class Player2D : MonoBehaviour
 
         if (other.CompareTag("Exit"))
         {
-            if (coins >= coinsTotal)
+            Debug.Log(coins + " / " + coinsTotal);
+            if (coins >= coinsTotal && !levelSaved)
             {
-                Debug.Log("You win!");
+                levelSaved = true;
+
+                LevelData level = LevelLoader.CurrentLevel;
+
+                int earnedStars = starTimer.FinishLevel();
+
+                SaveManager.Instance.CompleteLevel(
+                    level.levelNumber,
+                    earnedStars,
+                    starTimer.ElapsedTime
+                );  
+
                 winPanel.SetActive(true);
             }
             else
@@ -90,20 +108,40 @@ public class Player2D : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    
     public void nextLevel()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
+        int nextIndex = GameSession.levelIndex + 1;
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        if (nextIndex >= GameSession.levelCount)
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            Debug.Log("All levels completed!");
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("WinScene");
+            return;
         }
-        else
+
+        if (SaveManager.Instance == null)
         {
-            Debug.Log("No more levels available.");
+            Debug.LogError("SaveManager is missing!");
+            return;
         }
+
+        if (!SaveManager.Instance.IsLevelUnlocked(nextIndex + 1))
+        {
+            Debug.LogWarning("Next level is locked!");
+            return;
+        }
+
+        GameSession.levelIndex = nextIndex;
+
+        Time.timeScale = 1f;
+
+        Debug.Log("Loading Level " + (nextIndex + 1));
+
+        SceneManager.LoadScene("Game");
     }
+
 
     public void backToMenu()
     {
@@ -130,9 +168,22 @@ public class Player2D : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < 180)
+        if (transform.position.y < playerStats.fallPoint)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    public void ConfigureCoins(int required)
+    {
+        coinsConfigured = true;
+
+        coinsTotal = Mathf.Max(0, required);
+        coins = 0;
+
+        if (coinText != null)
+        {
+            coinText.text = "Coins: 0 / " + coinsTotal;
         }
     }
 }

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_03
+  m_EditorClassIdentifier: 
+  levelNumber: 3
+  levelName: Level 03
+  levelDescription: 'Look, that''s canon
+
+'
+  levelType: 0
+  layoutPrefab: {fileID: 351441443756050482, guid: 31a68b726e096114c81c1ad66d338d99, type: 3}
+  playerSpawnPosition: {x: 494.3554, y: 185.3554, z: 0}
+  portalPosition: {x: 506.18, y: 188.02, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 5281874041592519977, guid: d3bef4d7e5623274c888878ea6d1691c, type: 3}
+  coinPositions:
+  - {x: 495.974, y: 185.45, z: 0}
+  - {x: 500.4, y: 185.45, z: 0}
+  - {x: 501.86, y: 187.89, z: 0}
+  - {x: 497.12, y: 187.88, z: 0}
+  - {x: 503.82, y: 189.11, z: 0}
+  - {x: 505.77, y: 187.83, z: 0}
+  - {x: 490.91, y: 187.88, z: 0}
+  coinsRequired: 7
+  enemies: []
+  boss:
+    enemyPrefab: {fileID: 0}
+    spawnPosition: {x: 0, y: 0, z: 0}

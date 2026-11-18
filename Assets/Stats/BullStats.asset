@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BullStats
   m_EditorClassIdentifier: 
   viewRange: 5
-  fov: 90
+  fov: 360
   sightInterval: 0.1
   windup: 0.7
   dashSpeed: 7.5

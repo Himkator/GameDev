@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1962a1fd85600e645a79949b04210335, type: 3}
+  m_Name: Level_06
+  m_EditorClassIdentifier: 
+  levelNumber: 6
+  levelName: Level 06
+  levelDescription: Be careful with all of them
+  levelType: 0
+  layoutPrefab: {fileID: 6430420389723902977, guid: 05f2431bc330e4645a3434cbe9bf27c4, type: 3}
+  playerSpawnPosition: {x: 498.67, y: 185.3554, z: 0}
+  portalPosition: {x: 505.49, y: 189.01, z: 0}
+  threeStarGoal: 30
+  twoStarGoal: 60
+  coinPrefab: {fileID: 5281874041592519977, guid: d3bef4d7e5623274c888878ea6d1691c, type: 3}
+  coinPositions:
+  - {x: 494.72, y: 185.45, z: 0}
+  - {x: 496.56, y: 186.45, z: 0}
+  - {x: 500.4, y: 185.45, z: 0}
+  - {x: 503.73, y: 185.45, z: 0}
+  - {x: 503.82, y: 189.87, z: 0}
+  - {x: 501.86, y: 188.78, z: 0}
+  - {x: 496.54, y: 188.81, z: 0}
+  - {x: 490.91, y: 188.7, z: 0}
+  - {x: 505.77, y: 188.83, z: 0}
+  coinsRequired: 9
+  enemies: []
+  boss:
+    enemyPrefab: {fileID: 0}
+    spawnPosition: {x: 0, y: 0, z: 0}
